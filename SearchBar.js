@@ -2,19 +2,20 @@ import { View, TextInput } from "react-native";
 import React, { useState } from "react";
 
 function SearchBar() {
-    const [text, update_text] = useState('');
+    const [text, updateText] = useState('');
 
-    const handle_text_update = (text) => {
+    const handleTextUpdate = (text) => {
         console.log(text);
     }
 
-    // Update text
+    // Add appropriate figma design behind textbox.
 
     return (
-        <View>
+        <View 
+        style={{ padding: 20, position: 'absolute', top: 25, left: 15 }}>
             <TextInput
-            style={{ height: 40, width: 100, borderColor: 'gray', borderWidth: 1 }}
-            onChangeText={(text) => handle_text_update(text)}>
+            style={{ height: 40, width: 200, backgroundColor: 'rgb(235, 235, 235)'}}
+            onChangeText={(text) => handleTextUpdate(text)}>
             </TextInput>
         </View>
     )

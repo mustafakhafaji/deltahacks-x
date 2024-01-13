@@ -11,7 +11,7 @@ export default function App() {
   const handleOnSearchSubmit = (data, details) => {
     const latitude = details.geometry.location.lat;
     const longitude = details.geometry.location.lng;
-    setCurrentLocation([latitude, longitude]);
+    setCurrentLocation([latitude, -longitude]);
 
     console.log('Latitude:', latitude, 'Longitude:', longitude);
     // Set map location / route using lat/long.
@@ -19,9 +19,10 @@ export default function App() {
     // Send distance data to menu.
   }
 
+  // Current location appears to be wrong?
   return (
     <View>
-      <Map coordinates={current_location}/>
+      <Map coordinates={current_location} key={current_location[0]+current_location[1]}/>
       <SearchBar onSearchSubmit={handleOnSearchSubmit}/>
       
       {current_location.length !== 0 && <Menu />}

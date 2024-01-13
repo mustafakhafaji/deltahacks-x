@@ -4,17 +4,21 @@ import { StyleSheet } from 'react-native';
 
 // Stupid shit only runs Apple Maps on MacOS.
 function MyMap({ coordinates }) {
-    return (
-      <MapView
-        style={styles.map}
-        showsZoomControls={true}
-        initialRegion={{
-          latitude: coordinates[0],
-          longitude: -coordinates[1],
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}/>
-    );
+
+  console.log(coordinates[0]);
+  console.log(coordinates[1]);
+
+  return (
+    <MapView
+      style={styles.map}
+      showsZoomControls={true}
+      initialRegion={{
+        latitude: coordinates[0],
+        longitude: -coordinates[1],
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+      }}/>
+  );
 };
 
 const styles = StyleSheet.create({

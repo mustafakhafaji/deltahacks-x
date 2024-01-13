@@ -5,7 +5,7 @@ import Map from './src/components/Map';
 import Menu from './src/components/Menu';
 
 export default function App() {
-  const [currentLocation, setCurrentLocation] = useState([]);
+  const [current_location, setCurrentLocation] = useState([43.6532, 79.3832]);
 
   // Parse location data. 
   const handleOnSearchSubmit = (data, details) => {
@@ -21,10 +21,10 @@ export default function App() {
 
   return (
     <View>
-      <Map />
+      <Map coordinates={current_location}/>
       <SearchBar onSearchSubmit={handleOnSearchSubmit}/>
       
-      {currentLocation.length !== 0 && <Menu />}
+      {current_location.length !== 0 && <Menu />}
     </View>
   );
 }

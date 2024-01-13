@@ -3,14 +3,14 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 // Stupid shit only runs Apple Maps on MacOS.
-function MyMap() {
+function MyMap({ coordinates }) {
     return (
       <MapView
         style={styles.map}
         showsZoomControls={true}
         initialRegion={{
-          latitude: 90.7749,
-          longitude: -122.4194,
+          latitude: coordinates[0],
+          longitude: -coordinates[1],
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}/>

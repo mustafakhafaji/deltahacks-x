@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 // current_depth = 0 => modes
 // current_depth = 1 => makes
@@ -29,7 +30,7 @@ function Menu() {
     }
 
     function handleSelectMake(make) {
-        
+
     }
 
     function handleSelectModel(model) {

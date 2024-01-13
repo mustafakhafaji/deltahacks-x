@@ -4,27 +4,22 @@ import SearchBar from './src/components/SearchBar';
 import Map from './src/components/Map'; 
 
 export default function App() {
-  const [predictions, setCurrentPrediction] = useState([]);
+  const [currentLocation, setCurrentLocation] = useState([]);
 
-  const handleOnSearchSubmit = (data) => {
-    console.log(data);
-    setCurrentPrediction(data);
+  // Parse location data. 
+  const handleOnSearchSubmit = (data, details) => {
+    const latitude = details.geometry.location.lat;
+    const longitude = details.geometry.location.lng;
+    setCurrentLocation([latitude, longitude]);
+
+    console.log('Latitude:', latitude, 'Longitude:', longitude);
     // Send longitude and latitude to map
   }
 
   return (
-    <View style={styles.container}>      
+    <View>      
       <Map />
       <SearchBar onSearchSubmit={handleOnSearchSubmit}/>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

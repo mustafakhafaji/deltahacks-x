@@ -7,15 +7,15 @@ import SearchBar from './src/components/SearchBar';
 export default function App() {
   const [location, setCurrentLocation] = useState('');
 
-  const handleCurrentLocation = (data) => {
-    console.log("test");
+  const handleOnSearchSubmit = (data) => {
+    console.log(data);
     setCurrentLocation(data);
   }
 
   return (
     <View style={styles.container}>
 
-      <SearchBar onSearchSubmit={handleCurrentLocation}/>
+      <SearchBar onSearchSubmit={handleOnSearchSubmit}/>
 
       <StatusBar style="auto" />
     </View>

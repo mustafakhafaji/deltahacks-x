@@ -1,4 +1,4 @@
-// returns in kilograms
+// Returns Co2 emissions in kilograms.
 function calculateCarbonFootprint(transportType, distance) {
     switch(transportType) {
         case gasCar:
@@ -12,5 +12,4 @@ function calculateCarbonFootprint(transportType, distance) {
         case cycle:
             return (distance* 39)/1000;
     }
-
 }

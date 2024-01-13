@@ -10,6 +10,9 @@ function calculateCarbonFootprint(transportType, distance) {
         case walk:
             return (distance * 39)/1000;
         case cycle:
-            return (distance* 39)/1000;
+            return (distance*  39)/1000;
     }
+
+    // Add trian.
+    // Add tram.
 }

@@ -1,14 +1,15 @@
-import MapView, { PROVIDER_GOOGLE }from 'react-native-maps';
+import MapView from 'react-native-maps';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
+// Stupid shit only runs Apple Maps on MacOS.
 function MyMap() {
     return (
       <MapView
         style={styles.map}
-        //provider={PROVIDER_GOOGLE}
+        showsZoomControls={true}
         initialRegion={{
-          latitude: 37.7749,
+          latitude: 90.7749,
           longitude: -122.4194,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,

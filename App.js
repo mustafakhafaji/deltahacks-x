@@ -1,24 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import SearchBar from './src/components/SearchBar';
 import Map from './src/components/Map'; 
 
 export default function App() {
-  const [location, setCurrentLocation] = useState('');
+  const [predictions, setCurrentPrediction] = useState([]);
 
   const handleOnSearchSubmit = (data) => {
     console.log(data);
-    setCurrentLocation(data);
+    setCurrentPrediction(data);
+    // Send longitude and latitude to map
   }
 
   return (
-    <View style={styles.container}>
-
+    <View style={styles.container}>      
+      <Map />
       <SearchBar onSearchSubmit={handleOnSearchSubmit}/>
-      <Map></Map>
-
-      <StatusBar style="auto" />
     </View>
   );
 }

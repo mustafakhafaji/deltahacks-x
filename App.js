@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import SearchBar from './src/components/SearchBar';
 import Map from './src/components/Map'; 
+import Menu from './src/components/Menu';
 
 export default function App() {
   const [currentLocation, setCurrentLocation] = useState([]);
@@ -13,13 +14,17 @@ export default function App() {
     setCurrentLocation([latitude, longitude]);
 
     console.log('Latitude:', latitude, 'Longitude:', longitude);
-    // Send longitude and latitude to map
+    // Set map location / route using lat/long.
+    
+    // Send distance data to menu.
   }
 
   return (
-    <View>      
+    <View>
       <Map />
       <SearchBar onSearchSubmit={handleOnSearchSubmit}/>
+      
+      {currentLocation.length !== 0 && <Menu />}
     </View>
   );
 }

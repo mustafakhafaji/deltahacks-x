@@ -8,7 +8,8 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      <SearchBar></SearchBar>
+      <SearchBar/>
+
       <StatusBar style="auto" />
     </View>
   );

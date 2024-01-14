@@ -35,7 +35,7 @@ function SearchBar(props) {
             </TextInput>
 
             <TouchableOpacity style={{backgroundColor: '#284',paddingVertical:12,marginTop: 16, borderRadius: 4}} onPress={props.onSearchSubmit}>
-                <Text style={{textAlign: 'center',color: 'white', fontWeight: 'bold', fontSize: 15px}}>Directions</Text>
+                <Text style={{textAlign: 'center',color: 'white', fontWeight: 'bold', fontSize: 15}}>Directions</Text>
             </TouchableOpacity>
 
         </View>

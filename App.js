@@ -4,29 +4,41 @@ import SearchBar from './src/components/SearchBar';
 import Map from './src/components/Map'; 
 import Menu from './src/components/Menu';
 
+const init_coordinate = [43.6532, 79.3832]
+
 export default function App() {
-  const [current_location, setCurrentLocation] = useState([43.6532, 79.3832]);
+  const [current_coordinate, setCurrentCoordinate] = useState(init_coordinate);
+  const [origin_coordinate, setOriginCoordinate] = useState(init_coordinate);
+  const [destination_coordinate, setDestinationCoordinates] = useState([0, 0]);
+  const [directions_coordinates, setDirectionsCoordinates] = useState([origin_coordinate, destination_coordinate]);
 
-  // Parse location data. 
-  const handleOnSearchSubmit = (data, details) => {
+  // Parse coordinate data. 
+  const handleCoordinateSubmit = (data, details, coordinate_type) => {
     const latitude = details.geometry.location.lat;
-    const longitude = details.geometry.location.lng;
-    setCurrentLocation([latitude, -longitude]);
+    const longitude = -details.geometry.location.lng;
+    setCurrentCoordinate([latitude, longitude]);
 
-    console.log('Latitude:', latitude, 'Longitude:', longitude);
-    // Set map location / route using lat/long.
-    
-    // Send distance data to menu.
+    switch(coordinate_type) {
+      case "origin":
+        setOriginCoordinate([latitude, longitude]);
+      case "destination":
+        setDestinationCoordinates([latitude, longitude]);
+    }
   }
 
-  // Current location appears to be wrong?
+  const handleDirectionsSubmit = () => {
+    setDirectionsCoordinates([origin_coordinate, destination_coordinate]);
+    // just send start and destination coordinate to map to process.
+  }
+
+  // Current coordinate appears to be wrong?
   return (
     <View 
     style={{flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center'}}>
-      <Map coordinates={current_location} key={current_location[0]+current_location[1]}/>
-      <SearchBar onSearchSubmit={handleOnSearchSubmit}/>
+      <Map coordinates={current_coordinate} key={current_coordinate[0]+current_coordinate[1]}/>
+      <SearchBar coordinateSubmit={handleCoordinateSubmit} directionsSubmit={handleDirectionsSubmit}/>
       
-      {current_location.length !== 0 && <Menu />}
+      {current_coordinate.length !== 0 && <Menu />}
     </View>
   );
 }

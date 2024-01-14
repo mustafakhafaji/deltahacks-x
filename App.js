@@ -21,7 +21,8 @@ export default function App() {
 
   // Current location appears to be wrong?
   return (
-    <View>
+    <View 
+    style={{flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center'}}>
       <Map coordinates={current_location} key={current_location[0]+current_location[1]}/>
       <SearchBar onSearchSubmit={handleOnSearchSubmit}/>
       

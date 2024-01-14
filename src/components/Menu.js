@@ -25,7 +25,7 @@ const data = {
     "cycling" : {},
 }
 
-export default function Menu() {
+export default function Menu({ setMenuActive }) {
     const [current_depth, setCurrentDepth] = useState(0);
     const [current_make, setCurrentMake] = useState('');
     const [current_model, setCurrentModel] = useState('');
@@ -60,7 +60,44 @@ export default function Menu() {
 
     }
 
-    return (<View>
+    
+
+    return (<View style={styles.background}>
+
+            <View style={styles.top_bar}>
+            <TouchableOpacity>
+                <Text style={styles.back}>Back</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+                <Text style={styles.close}>Close</Text>
+            </TouchableOpacity>
+        </View>
 
     </View>)
 }
+
+const styles = StyleSheet.create({
+    background: {
+        width: '100%',
+        height: '70%',
+        backgroundColor: '#FFFFFF'
+    },
+
+    top_bar: {
+        flexDirection: 'row', // Horizontal direction
+        justifyContent: 'space-between', // Distribute items along the row
+    },
+
+    back: {
+        paddingLeft: 9,
+        paddingTop: 9,
+        fontSize: 16
+    },
+
+    close: {
+        paddingRight: 9,
+        paddingTop: 9,
+        fontSize: 16   
+    }
+})

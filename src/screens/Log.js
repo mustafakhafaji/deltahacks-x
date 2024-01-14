@@ -3,10 +3,8 @@ import { View } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import Map from '../components/Map'; 
 import Menu from '../components/Menu';
-import Stats from './Stats';
 
 const init_coordinate = [43.6532, 79.3832]
-
 
 function Log(){
   // Parse location data. 
@@ -15,8 +13,10 @@ function Log(){
   const [destination_coordinate, setDestinationCoordinates] = useState([0, 0]);
   const [directions_coordinates, setDirectionsCoordinates] = useState({origin: [0, 0], destination: [0, 0]});
   
+  const [menu_active, setMenuActive] = useState(false);
   function setRouteData(data) {
     const distanceKm = data.distance;
+    setMenuActive(true);
     // init menu
   }
 
@@ -45,10 +45,10 @@ function Log(){
   return (
     <View 
     style={{flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center'}}>
-      <Map coordinates={current_coordinate} directions={directions_coordinates} setRouteData={setRouteData} key={current_coordinate[0]+current_coordinate[1]} />
+      <Map coordinates={current_coordinate} directions={directions_coordinates} setRouteData={setRouteData} key={current_coordinate[0]+current_coordinate[1]}/>
       <SearchBar coordinateSubmit={handleCoordinateSubmit} directionsSubmit={handleDirectionsSubmit}/>
       
-      {current_coordinate.length !== 0 && <Menu />}
+      {menu_active == true && <Menu setMenuActive={setMenuActive} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 10, zIndex: 2 }} />}
     </View>
   );
 }

@@ -33,6 +33,30 @@ PODS:
     - ReactCommon/turbomodule/core (= 0.72.6)
   - fmt (6.2.1)
   - glog (0.3.5)
+  - Google-Maps-iOS-Utils (4.2.2):
+    - Google-Maps-iOS-Utils/Clustering (= 4.2.2)
+    - Google-Maps-iOS-Utils/Geometry (= 4.2.2)
+    - Google-Maps-iOS-Utils/GeometryUtils (= 4.2.2)
+    - Google-Maps-iOS-Utils/Heatmap (= 4.2.2)
+    - Google-Maps-iOS-Utils/QuadTree (= 4.2.2)
+    - GoogleMaps (~> 7.3)
+  - Google-Maps-iOS-Utils/Clustering (4.2.2):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps (~> 7.3)
+  - Google-Maps-iOS-Utils/Geometry (4.2.2):
+    - GoogleMaps (~> 7.3)
+  - Google-Maps-iOS-Utils/GeometryUtils (4.2.2):
+    - GoogleMaps (~> 7.3)
+  - Google-Maps-iOS-Utils/Heatmap (4.2.2):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps (~> 7.3)
+  - Google-Maps-iOS-Utils/QuadTree (4.2.2):
+    - GoogleMaps (~> 7.3)
+  - GoogleMaps (7.4.0):
+    - GoogleMaps/Maps (= 7.4.0)
+  - GoogleMaps/Base (7.4.0)
+  - GoogleMaps/Maps (7.4.0):
+    - GoogleMaps/Base
   - hermes-engine (0.72.6):
     - hermes-engine/Pre-built (= 0.72.6)
   - hermes-engine/Pre-built (0.72.6)
@@ -337,7 +361,7 @@ PODS:
   - React-jsinspector (0.72.6)
   - React-logger (0.72.6):
     - glog
-  - react-native-maps (1.9.1):
+  - react-native-maps (1.7.1):
     - React-Core
   - React-NativeModulesApple (0.72.6):
     - hermes-engine
@@ -449,6 +473,8 @@ PODS:
     - React-jsi (= 0.72.6)
     - React-logger (= 0.72.6)
     - React-perflogger (= 0.72.6)
+  - ReactNativeGetLocation (4.0.1):
+    - React-Core
   - SocketRocket (0.6.1)
   - Yoga (1.14.0)
 
@@ -466,6 +492,8 @@ DEPENDENCIES:
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - Google-Maps-iOS-Utils
+  - GoogleMaps
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - libevent (~> 2.1.12)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
@@ -502,11 +530,14 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - ReactNativeGetLocation (from `../node_modules/react-native-get-location`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
     - fmt
+    - Google-Maps-iOS-Utils
+    - GoogleMaps
     - libevent
     - SocketRocket
 
@@ -606,6 +637,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  ReactNativeGetLocation:
+    :path: "../node_modules/react-native-get-location"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -624,6 +657,8 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: 966f29e4e697de53a3b366355e8f57375c856ad9
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
+  Google-Maps-iOS-Utils: f77eab4c4326d7e6a277f8e23a0232402731913a
+  GoogleMaps: 032f676450ba0779bd8ce16840690915f84e57ac
   hermes-engine: 8057e75cfc1437b178ac86c8654b24e7fead7f60
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   RCT-Folly: 424b8c9a7a0b9ab2886ffe9c3b041ef628fd4fb1
@@ -641,7 +676,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 3bf18ff7cb03cd8dfdce08fbbc0d15058c1d71ae
   React-jsinspector: 194e32c6aab382d88713ad3dd0025c5f5c4ee072
   React-logger: cebf22b6cf43434e471dc561e5911b40ac01d289
-  react-native-maps: 4f45622710094c3603b262279c40026750579b1f
+  react-native-maps: 667f9b975549c6fa9b1631bf859440f68ebd3b8f
   React-NativeModulesApple: 02e35e9a51e10c6422f04f5e4076a7c02243fff2
   React-perflogger: e3596db7e753f51766bceadc061936ef1472edc3
   React-RCTActionSheet: 17ab132c748b4471012abbcdcf5befe860660485
@@ -659,9 +694,10 @@ SPEC CHECKSUMS:
   React-runtimescheduler: f23e337008403341177fc52ee4ca94e442c17ede
   React-utils: fa59c9a3375fb6f4aeb66714fd3f7f76b43a9f16
   ReactCommon: dd03c17275c200496f346af93a7b94c53f3093a4
+  ReactNativeGetLocation: b4379a01dff72507d9abce5f4d569b98abef7761
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: b76f1acfda8212aa16b7e26bcce3983230c82603
 
-PODFILE CHECKSUM: bdce122dd8ba8b01bc061ad4801a0127fb967d57
+PODFILE CHECKSUM: e54ac70908ea96b3dd7c7779897cd4f5d810a523
 
 COCOAPODS: 1.14.3

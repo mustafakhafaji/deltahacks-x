@@ -37,6 +37,9 @@ elsif podfile_properties.key?('ios.flipper') then
   end
 end
 
+pod 'GoogleMaps'
+  pod 'Google-Maps-iOS-Utils'
+
 target 'MyReactNative' do
   use_expo_modules!
   config = use_native_modules!

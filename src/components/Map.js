@@ -3,10 +3,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 // Stupid shit only runs Apple Maps on MacOS.
-function MyMap({ coordinates }) {
-
-  console.log(coordinates[0]);
-  console.log(coordinates[1]);
+function Map({ coordinates }) {
 
   return (
     <MapView
@@ -28,4 +25,4 @@ const styles = StyleSheet.create({
     },
   });
 
-export default MyMap;
+export default Map;

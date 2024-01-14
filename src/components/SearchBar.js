@@ -11,7 +11,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 
 function SearchBar(props) {
   const handleInputSubmit = (data, details, location) => {
-    props.locationSubmit(data, details, location);
+    props.coordinateSubmit(data, details, location);
   }
 
   const handleDirectionsSubmit = () => {
@@ -25,9 +25,9 @@ function SearchBar(props) {
       <GooglePlacesAutocomplete
         style={styles.textInput}
         placeholder="Type a place"
-        query={{key: GOOGLE_MAPS_API_KEY, location: "start"}}
+        query={{key: GOOGLE_MAPS_API_KEY}}
         fetchDetails={true}
-        onPress={(data, details) => handleInputSubmit(data, details, "start")}
+        onPress={(data, details) => handleInputSubmit(data, details, "origin")}
         onFail={error => console.log(error)}
         onNotFound={() => console.log('no results')}
         cl
@@ -37,7 +37,7 @@ function SearchBar(props) {
       <GooglePlacesAutocomplete
         style={styles.textInput}
         placeholder="Type a place"
-        query={{key: GOOGLE_MAPS_API_KEY, location: "destination"}}
+        query={{key: GOOGLE_MAPS_API_KEY}}
         fetchDetails={true}
         onPress={(data, details) => handleInputSubmit(data, details, "destination")}
         onFail={error => console.log(error)}

@@ -8,7 +8,7 @@ is an alternative to Google Maps, with a twist that is intended to help battle C
 - JavaScript
 - Google Cloud APIs (Google Maps API)
 
-# ``Created By`` #
+## ``Created By`` ##
 Mustafa Al-Khafaji
 Kyle Carnrite
 Dominic Chen

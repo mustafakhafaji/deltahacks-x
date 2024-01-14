@@ -1,7 +1,8 @@
 import { Dimensions } from "react-native";
 import { LineChart } from "react-native-chart-kit";
+import GraphTitle from "./GraphTitle";
 
-function EmissionsUsedGraph({graphLabels, graphData, }) {
+function DistanceTravelledGraph({graphLabels, graphData, }) {
     const screenWidth = Dimensions.get('screen').width
       const chartConfig = {
         backgroundGradientFrom: "#ff00ff",
@@ -22,16 +23,19 @@ function EmissionsUsedGraph({graphLabels, graphData, }) {
           legend: ["Carbon Footprint (kg)"] // optional
     }
     return (
+      <>
+      <GraphTitle titleText={"Carbon Emissions Per Month:"} />
         <LineChart
             data={data}
-            width={400}
+            width={screenWidth}
             height={220}
             chartConfig={chartConfig}
             bgColor={"transparent"}
             fromZero={true}
             formatYLabel={(y) => y + " kg" }
             />
+            </>
     )
 }
 
-export default EmissionsUsedGraph;
+export default DistanceTravelledGraph;

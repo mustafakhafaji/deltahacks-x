@@ -6,15 +6,15 @@
 
 export default function calculateModesCarbonFootprint(transportType, distance) {
     switch(transportType) {
-        case "gasCar":
+        case "Gasoline Car":
             return (distance * 170)/1000;
-        case "electricCar":
+        case "Electric Car":
             return (distance * 47)/1000;
-        case "bus":
+        case "Bus":
             return (distance * 79)/1000 / 9.6;
-        case "walking":
+        case "Walking":
             return (distance * 39)/1000;
-        case "cycling":
+        case "Cycling":
             return (distance*  39)/1000;
     }
 

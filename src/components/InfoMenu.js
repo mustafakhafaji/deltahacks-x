@@ -7,7 +7,7 @@ import CarbonInfo from "./CarbonInfo";
 // current_depth = 2 => models
 
 const data = {
-    "gasCar": {
+    "Gasoline Car": {
         makes: {
             "Audi": ["A4", "A6", "CRV", "Q5", "A3"],
             "BMW": ["Series3", "Series5", "X3", "X5", "Series7"],
@@ -20,10 +20,10 @@ const data = {
             "Volkswagen": ["Golf", "Passat", "Tiguan", "Atlas", "ID4"],
         }
     },
-    "electricCar" : {},
-    "bus" : {},
-    "walking" : {},
-    "cycling" : {},
+    "Electric Car" : {},
+    "Bus" : {},
+    "Walking" : {},
+    "Cycling" : {},
 }
 
 export default function InfoMenu({ setMenuActive, distance }) {
@@ -53,15 +53,9 @@ export default function InfoMenu({ setMenuActive, distance }) {
         }
     }
 
-    function handleSelectMake(make) {
-
+    function handleSelectMenu(item) {
+        conso
     }
-
-    function handleSelectModel(model) {
-
-    }
-
-    
 
     return (
     <View style={styles.background}>
@@ -76,9 +70,11 @@ export default function InfoMenu({ setMenuActive, distance }) {
         </View>
 
         <ScrollView style={styles.scroll}>
-        {data_rendering.map((item) => (
+            <TouchableOpacity onPress={() => {handleSelectMenu(item)}}>
+            {data_rendering.map((item) => (
             <CarbonInfo depth={current_depth} title={item} distance={distance} key={item}></CarbonInfo>
          ))}
+            </TouchableOpacity>
         </ScrollView>
     </View>
     )

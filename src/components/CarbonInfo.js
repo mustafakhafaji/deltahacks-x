@@ -60,7 +60,7 @@ export default function CarbonInfo({ depth, title, distance }) {
     return (<View style={styles.outerView}>
         <View style={styles.innerView}>
             <Text>{title}</Text>
-            <Text>{carbon.toFixed(2)}Kg of Co2</Text>
+            <Text>{carbon.toFixed(2)}kg of Co2</Text>
         </View>
     </View>)
 }
@@ -70,9 +70,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#b5b5b5',
-      width: '80%',
-      height: '20%'
+      width: '100%',
     },
     innerView: {
       marginTop: 20,

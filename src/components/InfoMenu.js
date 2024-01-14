@@ -63,15 +63,15 @@ export default function InfoMenu({ setMenuActive, distance }) {
 
     
 
-    return (<View>
-
+    return (
+    <View style={styles.background}>
         <View style={styles.top_bar}>
             <TouchableOpacity>
-                <Text style={styles.back}>Back</Text>
+                <Text style={styles.text_btn}>Back</Text>
             </TouchableOpacity>
 
             <TouchableOpacity onPress={() => {setMenuActive(false)}}>
-                <Text style={styles.close}>Close</Text>
+                <Text style={styles.text_btn}>Close</Text>
             </TouchableOpacity>
         </View>
 
@@ -80,36 +80,37 @@ export default function InfoMenu({ setMenuActive, distance }) {
             <CarbonInfo depth={current_depth} title={item} distance={distance} key={item}></CarbonInfo>
          ))}
         </ScrollView>
-    </View>)
+    </View>
+    )
 }
 
 const styles = StyleSheet.create({
     background: {
+        height: '100%',
         width: '100%',
-        height: '70%',
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#2f422e',
         alignItems: 'center',
+        justifyContent: 'center'
     },
 
     scroll: {
-        flex: 1,
+        width: '100%',
+        backgroundColor: '#2f422e',
         paddingTop: 5, // Set the desired marginTop distance
     },
 
     top_bar: {
-        flexDirection: 'row', // Horizontal direction
-        justifyContent: 'space-between', // Distribute items along the row
+        width: '100%',
+        flexDirection: 'row',
+        alignItems: "center",
+        justifyContent: 'space-between',
+        backgroundColor: '#224d0d'
     },
 
-    back: {
-        paddingLeft: 9,
-        paddingTop: 9,
-        fontSize: 16
+    text_btn: {
+        fontWeight: 'bold',
+        color: '#74cc8e',
+        fontSize: 16,
+        padding: 12,
     },
-
-    close: {
-        paddingRight: 9,
-        paddingTop: 9,
-        fontSize: 16   
-    }
 })

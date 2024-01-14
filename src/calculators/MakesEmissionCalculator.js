@@ -1,27 +1,27 @@
 // Returns Co2 emissions in kilograms.
-function calculateCarbonFootprint(make, distance) {
+export default function calculateMakesCarbonFootprint(make, distance) {
     switch(make) {
-        case Toyota:
+        case "Toyota":
             return (distance * 1)/1000;
-        case Volkswagen:
+        case "Volkswagen":
             return (distance * 1)/1000;
-        case Ford:
+        case "Ford":
             return (distance * 1)/1000;
-        case Chevrolet:
+        case "Chevrolet":
             return (distance * 1)/1000;
-        case Honda:
+        case "Honda":
             return (distance * 1)/1000;
-        case Nissan:
+        case "Nissan":
             return (distance * 1)/1000;
-        case BMW:
+        case "BMW":
             return (distance * 1)/1000;
-        case Toyota:
+        case "Toyota":
             return (distance * 1)/1000;
-        case MercedesBenz:
+        case "MercedesBenz":
             return (distance * 1)/1000;
-        case Audi:
+        case "Audi":
             return (distance * 1)/1000;
-        case Hyundai:
+        case "Hyundai":
             return (distance * 1)/1000;
     }
 }

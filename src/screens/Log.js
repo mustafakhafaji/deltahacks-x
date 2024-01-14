@@ -5,13 +5,21 @@ import Map from '../components/Map';
 import Menu from '../components/Menu';
 const init_coordinate = [43.6532, 79.3832]
 
-
 function Log(){
   // Parse location data. 
   const [current_coordinate, setCurrentCoordinate] = useState(init_coordinate);
   const [origin_coordinate, setOriginCoordinate] = useState(init_coordinate);
   const [destination_coordinate, setDestinationCoordinates] = useState([0, 0]);
   const [directions_coordinates, setDirectionsCoordinates] = useState({origin: [0, 0], destination: [0, 0]});
+  
+  const [menu_active, setMenuActive] = useState(false);
+  const [distance, setDistance] = useState(0);
+
+  function setRouteData(data) {
+    setDistance(data.distance);
+    setMenuActive(true);
+    // init menu
+  }
 
   // Parse coordinate data. 
   const handleCoordinateSubmit = (data, details, coordinate_type) => {
@@ -38,10 +46,10 @@ function Log(){
   return (
     <View 
     style={{flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center'}}>
-      <Map coordinates={current_coordinate} directions={directions_coordinates} key={current_coordinate[0]+current_coordinate[1]} />
+      <Map coordinates={current_coordinate} directions={directions_coordinates} setRouteData={setRouteData} key={current_coordinate[0]+current_coordinate[1]}/>
       <SearchBar coordinateSubmit={handleCoordinateSubmit} directionsSubmit={handleDirectionsSubmit}/>
       
-      {current_coordinate.length !== 0 && <Menu />}
+      {menu_active == true && <InfoMenu setMenuActive={setMenuActive} distance={distance} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 10, zIndex: 2 }} />}
     </View>
   );
 }

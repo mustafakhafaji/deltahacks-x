@@ -1,15 +1,15 @@
 // Returns Co2 emissions in kilograms.
-function calculateCarbonFootprint(model, distance) {
+export default function calculateCarbonFootprint(model, distance) {
     switch(model) {
-        case Altima:
+        case "Camry":
             return (distance * 1)/1000;
-        case Rogue:
+        case "Corolla":
             return (distance * 1)/1000;
-        case Maxima:
+        case "RAV4":
             return (distance * 1)/1000;
-        case Pathfinder:
+        case "Highlander":
             return (distance * 1)/1000;
-        case Leaf:
+        case "Prius":
             return (distance * 1)/1000;
     }
 }

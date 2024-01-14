@@ -5,9 +5,11 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 // Stupid shit only runs Apple Maps on MacOS.
-function Map({ coordinates, directions }) {
-  
-  console.log({latitude: directions.origin[0], latitude: -directions.origin[1]})
+function Map({ coordinates, directions, setRouteData }) {
+  function handleOnReady(data) {
+    console.log("test");
+    setRouteData(data);
+  }
 
   return (
     <MapView
@@ -25,7 +27,8 @@ function Map({ coordinates, directions }) {
         destination={{latitude: directions.destination[0], longitude: -directions.destination[1]}}
         apikey={GOOGLE_MAPS_API_KEY}
         strokeWidth={3}
-        strokeColor='hotpink'
+        strokeColor='green'
+        onReady={handleOnReady}
       />
       {directions[0] && <Marker coordinate={{ latitude: directions.origin[0], longitude: -directions.origin[1] }} />}
       {directions[1] && <Marker coordinate={{ latitude: directions.destination[0], longitude: -directions.destination[1] }} />}

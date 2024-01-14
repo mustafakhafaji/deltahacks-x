@@ -1,15 +1,15 @@
 // Returns Co2 emissions in kilograms.
-function calculateCarbonFootprint(model, distance) {
+export default function calculateBMWCarbonFootprint(model, distance) {
     switch(model) {
-        case Golf:
+        case "Series3":
             return (distance * 1)/1000;
-        case Passat:
+        case "Series5":
             return (distance * 1)/1000;
-        case Tiguan:
+        case "X3":
             return (distance * 1)/1000;
-        case Atlas:
+        case "X5":
             return (distance * 1)/1000;
-        case ID4:
+        case "Series7":
             return (distance * 1)/1000;
     }
 }

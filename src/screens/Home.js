@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity } from "react-native";
 
 
+//nav prop gets passed in the navigate function to go to specfied route (map/log travel screen)
 function Home ({ navigation }) {
 
   return (
@@ -8,8 +9,9 @@ function Home ({ navigation }) {
        <Text style={{textAlign: 'center',color: 'white', fontWeight: 'bold', fontSize: 40, paddingBottom: 40}}>
         Smoggle Maps
         </Text>
-       <TouchableOpacity style={{backgroundColor: '#BCB88A',paddingHorizontal:40, paddingVertical: 20,marginTop: 16, borderRadius: 4}} onPress={() => navigation.navigate('Log')}>
-                <Text style={{textAlign: 'center',color: 'white', fontWeight: 'bold', fontSize: 15}}>Enter</Text>
+
+       <TouchableOpacity style={{backgroundColor: '#BCB88A',paddingHorizontal:40, paddingVertical: 20,marginTop: 16, borderRadius: 4}} onPress={() => navigation.navigate('Log')}> 
+                <Text style={{textAlign: 'center',color: 'white', fontWeight: 'bold', fontSize: 15}}>Enter</Text> 
         </TouchableOpacity>
 
     </View>

@@ -15,7 +15,7 @@ export default function App() {
   // Parse coordinate data. 
   const handleCoordinateSubmit = (data, details, coordinate_type) => {
     const latitude = details.geometry.location.lat;
-    const longitude = -details.geometry.location.lng;
+    const longitude = details.geometry.location.lng;
     setCurrentCoordinate([latitude, longitude]);
 
     switch(coordinate_type) {
@@ -35,7 +35,7 @@ export default function App() {
   return (
     <View 
     style={{flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center'}}>
-      <Map coordinates={current_coordinate} key={current_coordinate[0]+current_coordinate[1]}/>
+      <Map coordinates={current_coordinate} locations={destination_coordinate} key={current_coordinate[0]+current_coordinate[1]}/>
       <SearchBar coordinateSubmit={handleCoordinateSubmit} directionsSubmit={handleDirectionsSubmit}/>
       
       {current_coordinate.length !== 0 && <Menu />}

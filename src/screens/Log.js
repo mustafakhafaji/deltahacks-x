@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import Map from '../components/Map'; 
-import Menu from '../components/Menu';
+import InfoMenu from '../components/InfoMenu';
 const init_coordinate = [43.6532, 79.3832]
 
 function Log(){

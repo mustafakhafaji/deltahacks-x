@@ -19,7 +19,7 @@ function EmissionBreakdown() {
       {
         name: "Car",
         Kms: 20,
-        color: "#F00",
+        color: "#21F321",
         legendFontColor: "#7F7F7F",
         legendFontSize: 15
       },

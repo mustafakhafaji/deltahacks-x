@@ -40,7 +40,7 @@ function Log(){
   return (
     <View 
     style={{flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center'}}>
-      <Map coordinates={current_coordinate} key={current_coordinate[0]+current_coordinate[1]}/>
+      <Map coordinates={current_coordinate} key={current_coordinate[0]+current_coordinate[1]} startend={[origin_coordinate,destination_coordinate]} />
       <SearchBar coordinateSubmit={handleCoordinateSubmit} directionsSubmit={handleDirectionsSubmit}/>
       
       {current_coordinate.length !== 0 && <Menu />}

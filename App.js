@@ -21,8 +21,10 @@ export default function App() {
     switch(coordinate_type) {
       case "origin":
         setOriginCoordinate([latitude, longitude]);
+        break;
       case "destination":
         setDestinationCoordinates([latitude, longitude]);
+        break;
     }
   }
 

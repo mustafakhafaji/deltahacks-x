@@ -54,7 +54,8 @@ export default function InfoMenu({ setMenuActive, distance }) {
     }
 
     function handleSelectMenu(item) {
-        conso
+        //setDataRendering(Object.keys(data[item]));
+        //current_depth++;
     }
 
     return (
@@ -70,11 +71,13 @@ export default function InfoMenu({ setMenuActive, distance }) {
         </View>
 
         <ScrollView style={styles.scroll}>
-            <TouchableOpacity onPress={() => {handleSelectMenu(item)}}>
+            
             {data_rendering.map((item) => (
+                <TouchableOpacity onPress={() => {handleSelectMenu(item)}}>
             <CarbonInfo depth={current_depth} title={item} distance={distance} key={item}></CarbonInfo>
-         ))}
             </TouchableOpacity>
+         ))}
+            
         </ScrollView>
     </View>
     )

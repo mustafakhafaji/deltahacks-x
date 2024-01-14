@@ -1,15 +1,15 @@
 // Returns Co2 emissions in kilograms.
 export default function calculateModesCarbonFootprint(transportType, distance) {
     switch(transportType) {
-        case gasCar:
+        case "gasCar":
             return (distance * 170)/1000;
-        case electricCar:
+        case "electricCar":
             return (distance * 47)/1000;
-        case bus:
+        case "bus":
             return (distance * 79)/1000;
-        case walking:
+        case "walking":
             return (distance * 39)/1000;
-        case cycling:
+        case "cycling":
             return (distance*  39)/1000;
     }
 

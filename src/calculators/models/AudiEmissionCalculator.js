@@ -1,15 +1,15 @@
 // Returns Co2 emissions in kilograms.
 export default function calculateAudiCarbonFootprint(model, distance) {
     switch(model) {
-        case A4:
+        case "A4":
             return (distance * 1)/1000;
-        case A6:
+        case "A6":
             return (distance * 1)/1000;
-        case CRV:
+        case "CRV":
             return (distance * 1)/1000;
-        case Q5:
+        case "Q5":
             return (distance * 1)/1000;
-        case A3:
+        case "A3":
             return (distance * 1)/1000;
     }
 }

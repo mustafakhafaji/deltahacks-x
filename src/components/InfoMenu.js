@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import CarbonInfo from "./CarbonInfo";
 
 // current_depth = 0 => modes
 // current_depth = 1 => makes
@@ -25,7 +26,7 @@ const data = {
     "cycling" : {},
 }
 
-export default function Menu({ setMenuActive }) {
+export default function InfoMenu({ setMenuActive, distance }) {
     const [current_depth, setCurrentDepth] = useState(0);
     const [current_make, setCurrentMake] = useState('');
     const [current_model, setCurrentModel] = useState('');
@@ -73,6 +74,10 @@ export default function Menu({ setMenuActive }) {
                 <Text style={styles.close}>Close</Text>
             </TouchableOpacity>
         </View>
+
+        {data_rendering.map((item) => (
+            <CarbonInfo depth={current_depth} title={item} distance={distance}></CarbonInfo>
+         ))}
 
     </View>)
 }

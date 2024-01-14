@@ -1,15 +1,15 @@
 // Returns Co2 emissions in kilograms.
 export default function calculateCarbonFootprint(model, distance) {
     switch(model) {
-        case CClass:
+        case "CClass":
             return (distance * 1)/1000;
-        case EClass:
+        case "EClass":
             return (distance * 1)/1000;
-        case GLE:
+        case "GLE":
             return (distance * 1)/1000;
-        case SClass:
+        case "SClass":
             return (distance * 1)/1000;
-        case GLC:
+        case "GLC":
             return (distance * 1)/1000;
     }
 }

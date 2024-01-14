@@ -1,15 +1,15 @@
 // Returns Co2 emissions in kilograms.
 export default function calculateCarbonFootprint(model, distance) {
     switch(model) {
-        case Silverado:
+        case "Silverado":
             return (distance * 1)/1000;
-        case Equinox:
+        case "Equinox":
             return (distance * 1)/1000;
-        case Malibu:
+        case "Malibu":
             return (distance * 1)/1000;
-        case Traverse:
+        case "Traverse":
             return (distance * 1)/1000;
-        case Camaro:
+        case "Camaro":
             return (distance * 1)/1000;
     }
 }

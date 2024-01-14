@@ -1,15 +1,15 @@
 // Returns Co2 emissions in kilograms.
 export default function calculateCarbonFootprint(model, distance) {
     switch(model) {
-        case Altima:
+        case "Altima":
             return (distance * 1)/1000;
-        case Rogue:
+        case "Rogue":
             return (distance * 1)/1000;
-        case Maxima:
+        case "Maxima":
             return (distance * 1)/1000;
-        case Pathfinder:
+        case "Pathfinder":
             return (distance * 1)/1000;
-        case Leaf:
+        case "Leaf":
             return (distance * 1)/1000;
     }
 }

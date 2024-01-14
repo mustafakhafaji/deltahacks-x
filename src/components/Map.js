@@ -5,9 +5,8 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 // Stupid shit only runs Apple Maps on MacOS.
-function Map({ coordinates, directions, setRouteData }) {
+function Map({ coordinates, directions, other_directions, setRouteData }) {
   function handleOnReady(data) {
-    console.log("test");
     setRouteData(data);
   }
 
@@ -30,8 +29,8 @@ function Map({ coordinates, directions, setRouteData }) {
         strokeColor='green'
         onReady={handleOnReady}
       />
-      {directions[0] && <Marker coordinate={{ latitude: directions.origin[0], longitude: -directions.origin[1] }} />}
-      {directions[1] && <Marker coordinate={{ latitude: directions.destination[0], longitude: -directions.destination[1] }} />}
+      {<Marker coordinate={{ latitude: other_directions.origin[0], longitude: -other_directions.origin[1] }} />}
+      {<Marker coordinate={{ latitude: other_directions.destination[0], longitude: -other_directions.destination[1] }} />}
       </MapView>
   );
 };

@@ -47,10 +47,10 @@ function Log(){
   return (
     <View 
     style={{flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center'}}>
-      <Map coordinates={current_coordinate} directions={directions_coordinates} setRouteData={setRouteData} key={current_coordinate[0]+current_coordinate[1]}/>
-      <SearchBar coordinateSubmit={handleCoordinateSubmit} directionsSubmit={handleDirectionsSubmit}/>
+      <Map coordinates={current_coordinate} directions={directions_coordinates} other_directions={{origin: [origin_coordinate[0], origin_coordinate[1]], destination: [destination_coordinate[0], destination_coordinate[1]]}} setRouteData={setRouteData} key={current_coordinate[0]+current_coordinate[1]}/>
+      <SearchBar style={{zIndex: 3}} coordinateSubmit={handleCoordinateSubmit} directionsSubmit={handleDirectionsSubmit} setMenuActive={setMenuActive}/>
       
-      {menu_active == true && <InfoMenu setMenuActive={setMenuActive} distance={distance} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 10, zIndex: 2 }} />}
+      {menu_active == true && <InfoMenu setMenuActive={setMenuActive} distance={distance} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 10, zIndex: 1 }} />}
     </View>
   );
 }

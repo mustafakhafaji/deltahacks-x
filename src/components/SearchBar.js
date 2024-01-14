@@ -12,6 +12,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 function SearchBar(props) {
   const handleInputSubmit = (data, details, location) => {
     props.coordinateSubmit(data, details, location);
+    props.setMenuActive(false);
   }
 
   const handleDirectionsSubmit = () => {

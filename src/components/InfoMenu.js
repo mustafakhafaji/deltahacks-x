@@ -70,14 +70,14 @@ export default function InfoMenu({ setMenuActive, distance }) {
                 <Text style={styles.back}>Back</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {setMenuActive(false)}}>
                 <Text style={styles.close}>Close</Text>
             </TouchableOpacity>
         </View>
 
         <ScrollView style={styles.scroll}>
         {data_rendering.map((item) => (
-            <CarbonInfo depth={current_depth} title={item} distance={distance}></CarbonInfo>
+            <CarbonInfo depth={current_depth} title={item} distance={distance} key={item}></CarbonInfo>
          ))}
         </ScrollView>
     </View>)

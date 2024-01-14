@@ -17,7 +17,6 @@ import calculateVolkswagenCarbonFootPrint from "../calculators/models/Volkswagen
 // @param title: Either vehicle/make/model
 // @param distance: KM travelled
 export default function CarbonInfo({ depth, title, distance }) {
-    console.log(depth, title, distance);
     let carbon = 0;
     switch(depth) {
         case 0:
@@ -45,6 +44,15 @@ export default function CarbonInfo({ depth, title, distance }) {
                     break;
                 case "MercedezBenz":
                     carbon = calculateMercedezBenzCarbonFootPrint(title, distance);
+                    break;
+                case "Nissan":
+                    carbon = calculateNissanCarbonFootPrint(title, distance);
+                    break;
+                case "Toyota":
+                    carbon = calculateToyotaCarbonFootPrint(title, distance);
+                    break;
+                case "Volkswagen":
+                    carbon = calculateVolkswagenCarbonFootPrint(title, distance);
                     break;
             }
         break;

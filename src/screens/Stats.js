@@ -9,9 +9,11 @@ function Stats({ navigation }){
   return (
 
     <View>
-      
-
+      <Text>
+        hi
+      </Text>
     </View>
+  
   );
 }
 

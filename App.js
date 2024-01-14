@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { LogBox } from 'react-native';
 import Home from './src/screens/Home';
 import Log from './src/screens/Log';
 import { NavigationContainer } from '@react-navigation/native';

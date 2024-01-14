@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import CarbonInfo from "./CarbonInfo";
 
 // current_depth = 0 => modes
@@ -63,9 +63,9 @@ export default function InfoMenu({ setMenuActive, distance }) {
 
     
 
-    return (<View style={styles.background}>
+    return (<View>
 
-            <View style={styles.top_bar}>
+        <View style={styles.top_bar}>
             <TouchableOpacity>
                 <Text style={styles.back}>Back</Text>
             </TouchableOpacity>
@@ -75,10 +75,11 @@ export default function InfoMenu({ setMenuActive, distance }) {
             </TouchableOpacity>
         </View>
 
+        <ScrollView style={styles.scroll}>
         {data_rendering.map((item) => (
             <CarbonInfo depth={current_depth} title={item} distance={distance}></CarbonInfo>
          ))}
-
+        </ScrollView>
     </View>)
 }
 
@@ -86,7 +87,13 @@ const styles = StyleSheet.create({
     background: {
         width: '100%',
         height: '70%',
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#FFFFFF',
+        alignItems: 'center',
+    },
+
+    scroll: {
+        flex: 1,
+        paddingTop: 5, // Set the desired marginTop distance
     },
 
     top_bar: {

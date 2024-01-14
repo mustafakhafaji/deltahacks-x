@@ -18,21 +18,57 @@ import calculateVolkswagenCarbonFootPrint from "../calculators/models/Volkswagen
 // @param distance: KM travelled
 export default function CarbonInfo({ depth, title, distance }) {
     console.log(depth, title, distance);
+    let carbon = 0;
     switch(depth) {
         case 0:
-            calculateModesCarbonFootprint(title, distance);
+            carbon = calculateModesCarbonFootprint(title, distance);
+            break;
         case 1:
-            calculateMakesCarbonFootprint(title, distance);
+            carbon = calculateMakesCarbonFootPrint(title, distance);
+            break;
         case 2:
             switch(title) {
                 case "Audi":
-                    calculateAudiCarbonFootPrint(title, distance)
-                
+                    carbon = calculateAudiCarbonFootPrint(title, distance);
+                    break;
                 case "BMW":
-                    calculateBMWCarbonFootPrint(title, distance)
+                    carbon = calculateBMWCarbonFootPrint(title, distance);
+                    break;
+                case "Chevrolet":
+                    carbon = calculateChevroletCarbonFootPrint(title, distance);
+                    break;
+                case "Honda":
+                    carbon = calculateHondaCarbonFootPrint(title, distance);
+                    break;
+                case "Hyundai":
+                    carbon = calculateHyundaiCarbonFootPrint(title, distance);
+                    break;
+                case "MercedezBenz":
+                    carbon = calculateMercedezBenzCarbonFootPrint(title, distance);
+                    break;
             }
+        break;
     }
-    return (<View>
-        <Text>Test</Text>
+    return (<View style={styles.outerView}>
+        <View style={styles.innerView}>
+            <Text>{title}</Text>
+            <Text>{carbon.toFixed(2)}Kg of Co2</Text>
+        </View>
     </View>)
 }
+
+const styles = StyleSheet.create({
+    outerView: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#b5b5b5',
+      width: '80%',
+      height: '20%'
+    },
+    innerView: {
+      marginTop: 20,
+      padding: 10,
+      backgroundColor: '#e3e3e3',
+    },
+  });

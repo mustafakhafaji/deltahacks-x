@@ -13,7 +13,7 @@ function Log(){
   const [current_coordinate, setCurrentCoordinate] = useState(init_coordinate);
   const [origin_coordinate, setOriginCoordinate] = useState(init_coordinate);
   const [destination_coordinate, setDestinationCoordinates] = useState([0, 0]);
-  const [directions_coordinates, setDirectionsCoordinates] = useState([origin_coordinate, destination_coordinate]);
+  const [directions_coordinates, setDirectionsCoordinates] = useState({origin: [0, 0], destination: [0, 0]});
 
   // Parse coordinate data. 
   const handleCoordinateSubmit = (data, details, coordinate_type) => {
@@ -32,7 +32,7 @@ function Log(){
   }
 
   const handleDirectionsSubmit = () => {
-    setDirectionsCoordinates([origin_coordinate, destination_coordinate]);
+    setDirectionsCoordinates({origin: [origin_coordinate[0], origin_coordinate[1]], destination: [destination_coordinate[0], destination_coordinate[1]]});
     // just send start and destination coordinate to map to process.
   }
 
@@ -40,7 +40,7 @@ function Log(){
   return (
     <View 
     style={{flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center'}}>
-      <Map coordinates={current_coordinate} key={current_coordinate[0]+current_coordinate[1]} startend={[origin_coordinate,destination_coordinate]} />
+      <Map coordinates={current_coordinate} directions={directions_coordinates} key={current_coordinate[0]+current_coordinate[1]} />
       <SearchBar coordinateSubmit={handleCoordinateSubmit} directionsSubmit={handleDirectionsSubmit}/>
       
       {current_coordinate.length !== 0 && <Menu />}

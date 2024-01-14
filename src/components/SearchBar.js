@@ -20,14 +20,14 @@ function SearchBar(props) {
                   backgroundColor: 'white', shadowColor: 'black',
                   shadowOffset: {width: 2, height: 2}, shadowOpacity: 0.5,
                   shadowRadius: 4, elevation: 4, padding: 8, borderRadius: 8,}}>
-            <Text>From:</Text>
+            <Text style={{fontSize:18, padding: 4}}>From:</Text>
             <TextInput
             style={{borderColor: '#888', borderWidth: 1, padding: 13, borderRadius: 8}}
             onChangeText={(text) => {test()}}
             onSubmitEditing={props.onSearchSubmit}>
             </TextInput>
 
-            <Text>To:</Text>
+            <Text style={{fontSize:18, padding: 4}}>To:</Text>
             <TextInput
             style={{borderColor: '#888', borderWidth: 1, padding: 13, borderRadius: 8}}
             onChangeText={(text) => {test()}}

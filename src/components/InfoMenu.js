@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
 
     text_btn: {
         fontWeight: 'bold',
-        color: '#74cc8e',
+        color: '#9fd2ac',
         fontSize: 16,
         padding: 12,
     },

@@ -59,8 +59,8 @@ export default function CarbonInfo({ depth, title, distance }) {
     }
     return (<View style={styles.outerView}>
         <View style={styles.innerView}>
-            <Text>{title}</Text>
-            <Text>{carbon.toFixed(2)}kg of Co2</Text>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.subtext}>{carbon.toFixed(2)} kg of CO2</Text>
         </View>
     </View>)
 }
@@ -73,8 +73,21 @@ const styles = StyleSheet.create({
       width: '100%',
     },
     innerView: {
-      marginTop: 20,
-      padding: 10,
-      backgroundColor: '#e3e3e3',
+      flex: 1,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      width: '100%',
+      marginTop: 2,
+      padding: 22,
+      backgroundColor: '#e4ebe5',
     },
+    title: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        textTransform: 'capitalize'
+    },
+    subtext: {
+        fontSize: 22
+    }
   });

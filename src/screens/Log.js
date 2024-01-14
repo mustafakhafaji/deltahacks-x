@@ -14,6 +14,11 @@ function Log(){
   const [origin_coordinate, setOriginCoordinate] = useState(init_coordinate);
   const [destination_coordinate, setDestinationCoordinates] = useState([0, 0]);
   const [directions_coordinates, setDirectionsCoordinates] = useState({origin: [0, 0], destination: [0, 0]});
+  
+  function setRouteData(data) {
+    const distanceKm = data.distance;
+    // init menu
+  }
 
   // Parse coordinate data. 
   const handleCoordinateSubmit = (data, details, coordinate_type) => {
@@ -40,7 +45,7 @@ function Log(){
   return (
     <View 
     style={{flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center'}}>
-      <Map coordinates={current_coordinate} directions={directions_coordinates} key={current_coordinate[0]+current_coordinate[1]} />
+      <Map coordinates={current_coordinate} directions={directions_coordinates} setRouteData={setRouteData} key={current_coordinate[0]+current_coordinate[1]} />
       <SearchBar coordinateSubmit={handleCoordinateSubmit} directionsSubmit={handleDirectionsSubmit}/>
       
       {current_coordinate.length !== 0 && <Menu />}

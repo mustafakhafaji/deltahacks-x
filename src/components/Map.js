@@ -18,6 +18,13 @@ function Map({ coordinates, startend }) {
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       }}>
+      <MapViewDirections
+        origin={{latitude: coordinates[0][0], latitude: coordinates[0][1]}}
+        destination={{latitude: coordinates[1][0], latitude: coordinates[1][1]}}
+        apikey={GOOGLE_MAPS_API_KEY}
+        strokeWidth={3}
+        strokeColor='hotpink'
+      />
       {startend[0] && <Marker coordinate={{ latitude: startend[0][0], longitude: -startend[0][1] }} />}
       {startend[1] && <Marker coordinate={{ latitude: startend[1][0], longitude: -startend[1][1] }} />}
       </MapView>

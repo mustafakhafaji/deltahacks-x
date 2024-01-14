@@ -13,14 +13,14 @@ function EmissionBreakdownGraph() {
     data =[  
       {
         name: "Car",
-        Kms: 10,
+        Kms: 12,
         color: "#21F321",
         legendFontColor: "#7F7F7F",
         legendFontSize: 15
       },
       {
         name: "Walking",
-        Kms: 2,
+        Kms: 1,
         color: "red",
         legendFontColor: "#7F7F7F",
         legendFontSize: 15

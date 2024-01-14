@@ -4,12 +4,11 @@ import React, { useState } from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Ionicons from "react-native-ionicons";
+//import Ionicons from "react-native-ionicons";
 
 import Home from '../screens/Home';
 import Stats from '../screens/Stats';
 import Log from '../screens/Log';
-
 
 const Tab = createBottomTabNavigator();
 

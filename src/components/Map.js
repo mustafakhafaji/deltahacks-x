@@ -1,4 +1,6 @@
-import MapView from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import { GOOGLE_MAPS_API_KEY } from "../../secrets.js";
+import MapViewDirections from 'react-native-maps-directions';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
@@ -8,6 +10,7 @@ function Map({ coordinates }) {
   return (
     <MapView
       style={styles.map}
+      provider={PROVIDER_GOOGLE}
       showsZoomControls={true}
       initialRegion={{
         latitude: coordinates[0],

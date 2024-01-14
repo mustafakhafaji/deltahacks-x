@@ -23,8 +23,12 @@ function SearchBar(props) {
     style={styles.view}>
       <Text>From:</Text>
       <GooglePlacesAutocomplete
-        style={styles.textInput}
-        placeholder="Type a place"
+        style={autocomplete_styles}
+        placeholder="Choose starting point."
+        textInputProps={{
+          placeholderTextColor: '#ababab',
+          returnKeyType: "search"
+        }}
         query={{key: GOOGLE_MAPS_API_KEY}}
         fetchDetails={true}
         onPress={(data, details) => handleInputSubmit(data, details, "origin")}
@@ -35,8 +39,12 @@ function SearchBar(props) {
 
       <Text>To:</Text>
       <GooglePlacesAutocomplete
-        style={styles.textInput}
-        placeholder="Type a place"
+        style={autocomplete_styles}
+        placeholder="Choose a destination..."
+        textInputProps={{
+          placeholderTextColor: '#ababab',
+          returnKeyType: "search"
+        }}
         query={{key: GOOGLE_MAPS_API_KEY}}
         fetchDetails={true}
         onPress={(data, details) => handleInputSubmit(data, details, "destination")}
@@ -55,7 +63,7 @@ function SearchBar(props) {
 const styles = StyleSheet.create({
   view: {
     position: 'absolute',
-    top: '10%',
+    top: '8%',
     width: '90%',
     left: '5%',
     backgroundColor: 'white',
@@ -65,13 +73,6 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 4,
     padding: 8,
-    borderRadius: 8
-  },
-
-  textInput: {
-    borderColor: '#888',
-    borderWidth: 1,
-    padding: 13,
     borderRadius: 8
   },
 
@@ -89,5 +90,46 @@ const styles = StyleSheet.create({
     fontSize: 15
   }
 })
+
+const autocomplete_styles = StyleSheet.create({
+  textInputContainer:{
+      backgroundColor: 'rgba(0,0,0,0)',
+      borderTopWidth: 0,
+      borderBottomWidth:0,
+      zIndex:999,
+      width:'90%',
+  },
+  textInput: {
+      marginLeft: 0,
+      marginRight: 0,
+      height: 45,
+      color: '#000000',
+      fontSize: 16,
+      borderWidth:1,
+      zIndex:999,
+    },
+    predefinedPlacesDescription: {
+      color: '#1faadb'
+    },
+    listView:{
+        top:45.5,
+        zIndex:10,
+        position: 'absolute',
+        color: 'black',
+        backgroundColor:"white",
+        width:'89%',
+    },
+    separator:{
+      flex: 1,
+      height: StyleSheet.hairlineWidth,
+      backgroundColor: 'blue',
+    },
+    description:{
+      flexDirection:"row",
+      flexWrap:"wrap",
+      fontSize:14,
+      maxWidth:'89%',
+    }
+  })
 
 export default SearchBar;

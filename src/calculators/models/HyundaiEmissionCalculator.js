@@ -1,15 +1,15 @@
 // Returns Co2 emissions in kilograms.
-function calculateCarbonFootprint(model, distance) {
+export default function calculateCarbonFootprint(model, distance) {
     switch(model) {
-        case A4:
+        case Sonata:
             return (distance * 1)/1000;
-        case A6:
+        case Tucson:
             return (distance * 1)/1000;
-        case CRV:
+        case SantaFe:
             return (distance * 1)/1000;
-        case Q5:
+        case Elantra:
             return (distance * 1)/1000;
-        case A3:
+        case Kona:
             return (distance * 1)/1000;
     }
 }

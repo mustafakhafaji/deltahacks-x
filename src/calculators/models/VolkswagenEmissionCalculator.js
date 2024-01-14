@@ -1,15 +1,15 @@
 // Returns Co2 emissions in kilograms.
-function calculateCarbonFootprint(model, distance) {
+export default function calculateCarbonFootprint(model, distance) {
     switch(model) {
-        case CClass:
+        case Golf:
             return (distance * 1)/1000;
-        case EClass:
+        case Passat:
             return (distance * 1)/1000;
-        case GLE:
+        case Tiguan:
             return (distance * 1)/1000;
-        case SClass:
+        case Atlas:
             return (distance * 1)/1000;
-        case GLC:
+        case ID4:
             return (distance * 1)/1000;
     }
 }

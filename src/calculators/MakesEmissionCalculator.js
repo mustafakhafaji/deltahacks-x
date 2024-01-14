@@ -1,5 +1,5 @@
 // Returns Co2 emissions in kilograms.
-function calculateCarbonFootprint(make, distance) {
+export default function calculateMakesCarbonFootprint(make, distance) {
     switch(make) {
         case Toyota:
             return (distance * 1)/1000;

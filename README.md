@@ -9,7 +9,7 @@ is an alternative to Google Maps, with a twist that is intended to help battle C
 - Google Cloud APIs (Google Maps API)
 
 ## ``Created By`` ##
-Mustafa Al-Khafaji
-Kyle Carnrite
-Dominic Chen
+Mustafa Al-Khafaji | 
+Kyle Carnrite | 
+Dominic Chen | 
 Stephen Tao.

@@ -3,7 +3,6 @@ import { View } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import Map from '../components/Map'; 
 import Menu from '../components/Menu';
-import NavBar from '../components/NavBar';
 const init_coordinate = [43.6532, 79.3832]
 
 

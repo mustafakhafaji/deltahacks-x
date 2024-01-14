@@ -4,7 +4,16 @@ import Log from './src/screens/Log';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import NavBar from './src/components/NavBar';
+
+import { LogBox } from 'react-native';
+LogBox.ignoreAllLogs();//Ignore all log notifications
+
 const Stack = createNativeStackNavigator();
+
+
+
+
+
 
 function Nav(){
   return (

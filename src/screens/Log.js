@@ -39,6 +39,7 @@ function Log(){
 
   const handleDirectionsSubmit = () => {
     setDirectionsCoordinates({origin: [origin_coordinate[0], origin_coordinate[1]], destination: [destination_coordinate[0], destination_coordinate[1]]});
+    setMenuActive(true);
     // just send start and destination coordinate to map to process.
   }
 
